@@ -5,25 +5,25 @@
     "image": {
         "type": "string",
         "metadata": {
-            "description": "Container image to deploy. Should be of the form accountName/imagename:tag for images stored in Docker Hub or a fully qualified URI for a private registry like the Azure Container Registry."
+            "description": "Container image to deploy. For eg. accountName/imagename:tag for images stored in Docker Hub or a fully qualified URI for a private registry like the Azure Container Registry."
         }
     },
     "imageRegistryLoginServer": {
         "type": "string",
         "metadata": {
-            "description": "Server Name of the Container Server Registry."
+            "description": "Login server Name of the Container registry."
         }
     },
     "imageUsername": {
         "type": "string",
         "metadata": {
-            "description": "Login Name of the Container Server Registry."
+            "description": "Username of the Container registry."
         }
     },
     "imagePassword": {
         "type": "string",
         "metadata": {
-            "description": "Login Password of the Container Server Registry."
+            "description": "Password of the Container registry."
         }
     }
   },
@@ -31,7 +31,7 @@
       "cpuCores": "1.0",
       "memoryInGb": "1.5",
       "port": "80",
-      "name": "ttwebsite"
+      "name": "telltheworld"
   },
   "resources": [
     {
