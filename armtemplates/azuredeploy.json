@@ -31,18 +31,18 @@
       "cpuCores": "1.0",
       "memoryInGb": "1.5",
       "port": "80",
-      "name": "telltheworld"
+      "containerName": "playaround"
   },
   "resources": [
     {
-            "name": "[variables('name')]",
+            "name": "[variables('containerName')]",
             "type": "Microsoft.ContainerInstance/containerGroups",
             "apiVersion": "2017-08-01-preview",
             "location": "[resourceGroup().location]",
             "properties": {
                 "containers": [
                     {
-                        "name": "[variables('name')]",
+                        "name": "[variables('containerName')]",
                         "properties": {
                             "image": "[parameters('image')]",
                             "ports": [
@@ -69,20 +69,20 @@
                         }
                     ]
                  },
-                "imageRegistryCredentials": [
-                {
-                    "server": "[parameters('imageRegistryLoginServer')]",
-                    "username": "[parameters('imageUsername')]",
-                    "password": "[parameters('imagePassword')]"
-                }
-                ]
+                 "imageRegistryCredentials": [
+                     {
+                         "server": "[parameters('imageRegistryLoginServer')]",
+                         "username": "[parameters('imageUsername')]",
+                         "password": "[parameters('imagePassword')]"
+                     }
+                 ]
             }
         }
   ],
   "outputs": {
      "containerIPv4Address":{
           "type": "string",
-          "value": "[reference(resourceId('Microsoft.ContainerInstance/containerGroups/', variables('name'))).ipAddress.ip]"
-}
+          "value": "[reference(resourceId('Microsoft.ContainerInstance/containerGroups/', variables('containerName'))).ipAddress.ip]"
+        }
   }
 }

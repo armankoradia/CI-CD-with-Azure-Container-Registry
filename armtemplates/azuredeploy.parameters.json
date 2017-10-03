@@ -13,6 +13,6 @@
     },
     "imagePassword": {
       "value": "#{imagePassword}#"
-}
+    }
   }
 }
