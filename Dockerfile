@@ -9,13 +9,10 @@ RUN apt-get install apache2 -y
 RUN DEBIAN_FRONTEND=noninteractive
 RUN apt-get install php libapache2-mod-php php-mcrypt php-mysql -y
 
-COPY webpage/ /var/www/html
+COPY webpage/index.php /var/www/html/index.php
 
 RUN a2enmod rewrite
 RUN chown -R www-data:www-data /var/www/html
-
-VOLUME /var/www/html
-VOLUME /var/log/apache
 
 EXPOSE 80
 
