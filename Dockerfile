@@ -12,6 +12,7 @@ RUN apt-get install php libapache2-mod-php php-mcrypt php-mysql -y
 COPY webpage/index.php /var/www/html/index.php
 
 RUN a2enmod rewrite
+RUN rm /var/www/html/index.html
 RUN chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
