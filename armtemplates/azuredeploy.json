@@ -28,7 +28,7 @@
     }
   },
   "variables": {
-      "cpuCores": "1.0",
+      "numberCores": "1.0",
       "memoryInGb": "1.5",
       "port": "80",
       "containerName": "playaround"
@@ -52,7 +52,7 @@
                             ],
                             "resources": {
                                 "requests": {
-                                    "cpu": "[variables('cpuCores')]",
+                                    "cpu": "[variables('numberCores')]",
                                     "memoryInGb": "[variables('memoryInGb')]"
                                 }
                             }
